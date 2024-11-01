@@ -1,7 +1,61 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROYECTO 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        select, input[type="file"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
 <body>
-<h2>PROYECTO 2 Reflex Agent</h2>
-<p id="log"></p>
-<script type="text/javascript" src="reflex_agent.js"></script>
+    <script type="text/javascript" src="proyecto2.js"></script>
+
+    <h1>PROYECTO 2</h1>
+
+    <div class="container">
+        <!-- Selector de archivos -->
+        <input type="file" id="fileInput" accept=".csv" />
+        
+        <!-- Seleccionador con un listado de opciones -->
+        <select id="optionSelector">
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+            <option value="opcion3">Opción 3</option>
+            <option value="opcion4">Opción 4</option>
+        </select>
+
+        <!-- Botones -->
+        <button id="entrenamientoBtn">Entrenamiento</button>
+        <button id="prediccionBtn">Predicción</button>
+        <button id="tendenciasBtn">Tendencias</button>
+        <button id="patronesBtn">Patrones</button>
+        <button id="graficasBtn">Gráficas</button>
+    </div>
+
 </body>
 </html>
