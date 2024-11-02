@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROYECTO 2</title>
-    <style>
-        /* Fondo y fuente general */
+    <script type="text/javascript" src="https://tytusdb.github.io/tytusjs/dist/tytus.js"></script>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/standalone/umd/vis-network.min.js"></script>
+    <script type="module"> import * as GaugeChart from "https://unpkg.com/gauge-chart@next/dist/bundle.mjs";window.GaugeChart = GaugeChart;</script>
+
+    <style>        
         body {
             font-family: 'Roboto', sans-serif;
             display: flex;
@@ -16,8 +21,6 @@
             background-color: #1e1e2f;
             color: #ffffff;
         }
-
-        /* Estilo para el título */
         h1 {
             color: #00d4ff;
             font-size: 3em;
@@ -26,8 +29,6 @@
             text-align: center;
             text-shadow: 0 4px 10px rgba(0, 212, 255, 0.5);
         }
-
-        /* Contenedor central */
         .container {
             background-color: #2a2a3d;
             padding: 20px;
@@ -40,8 +41,6 @@
             align-items: center;
             gap: 15px;
         }
-
-        /* Botones */
         button {
             width: 100%;
             padding: 12px;
@@ -87,22 +86,42 @@
 
     <div class="container">
         <!-- Selector de archivos -->
-        <input type="file" id="fileInput" accept=".csv" />
+        <label for="csv">Seleccionar Archivo:</label>
+        <input type="file" id="csv" accept=".csv" required/>
         
         <!-- Seleccionador con un listado de opciones -->
-        <select id="optionSelector">
-            <option value="opcion1">Opción 1</option>
-            <option value="opcion2">Opción 2</option>
-            <option value="opcion3">Opción 3</option>
-            <option value="opcion4">Opción 4</option>
-        </select>
+        <label for="model-selection">Seleccionar Modelo:</label>
+                <select id="model-selection">
+                    <option hidden disabled selected></option>
+                    <option id="linear-regression" value="lr">Regresión Lineal</option>
+                    <option id="poly-regression" value="pr">Regresión Polinomial</option>
+                    <option id="decision-tree" value="dt">Árbol de decision</option>
+                </select>
 
         <!-- Botones -->
-        <button id="entrenamientoBtn">Entrenamiento</button>
-        <button id="prediccionBtn">Predicción</button>
-        <button id="tendenciasBtn">Tendencias</button>
-        <button id="patronesBtn">Patrones</button>
-        <button id="graficasBtn">Gráficas</button>
+        <div id="dataset"></div>
+
+        <div id="selectors"></div>
+
+        <br/>
+
+        <div id="buttons" hidden>
+            <form>
+                <button id="btn-train" type="button" onclick="">Entrenar</button>
+                <button id="btn-predict" type="button" disabled onclick="selectedModel.test()" >Ejecutar</button>
+                <button id="btn-graph" type="button" disabled onclick="selectedModel.graph()">Generar Gráficas</button>
+            </form>
+        </div>
+
+        <div class="tabs" id="tabs" hidden >
+                <button id="tab-train" onclick="showTab('train')" hidden >Salida Entrenamiento</button>
+                <button id="tab-predict" onclick="showTab('predict')" hidden >Salida Predicción</button>
+                <button id="tab-graphs" onclick="showTab('graphs')" hidden >Gráficas</button>
+                <button id="tab-all" onclick="showTab('all')" hidden >Mostrar Todo</button>
+        </div>
+        <div id="train" class="result"></div>
+        <div id="predict" class="result"></div>
+        <div id="graphs" class="result"><canvas class="graphs"></canvas></div>
     </div>
 
 </body>
