@@ -161,19 +161,17 @@
             <form>
                 <button id="btn-train" type="button" onclick="">Entrenar</button>
                 <button id="btn-predict" type="button" disabled onclick="selectedModel.test()" >Ejecutar</button>
-                <button id="btn-graph" type="button" disabled onclick="selectedModel.graph()">Generar Gráficas</button>
+                <button id="btn-graph" type="button" disabled onclick="selectedModel.graph()">Graficar</button>
             </form>
         </div>
 
         <div class="tabs" id="tabs" hidden >
-                <button id="tab-train" onclick="showTab('train')" hidden >Salida Entrenamiento</button>
-                <button id="tab-predict" onclick="showTab('predict')" hidden >Salida Predicción</button>
-                <button id="tab-graphs" onclick="showTab('graphs')" hidden >Gráficas</button>
-                <button id="tab-all" onclick="showTab('all')" hidden >Mostrar Todo</button>
+                <button id="tab-all" onclick="showTab('all')" hidden >Ver Proceso completo</button>
         </div>
         <div id="train" class="result"></div>
         <div id="predict" class="result"></div>
-        <div id="graphs" class="result"><canvas class="graphs"></canvas></div>
+        <br/>
+        <canvas class="graphs"></canvas>
     </body>
 
     <script type="text/javascript">
