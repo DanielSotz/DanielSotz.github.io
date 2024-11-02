@@ -1,41 +1,41 @@
 <html>
     <head>
-        <title>Proyecto 2</title>
+        <title>IA Proyecto 2</title>
         <script type="text/javascript" src="https://tytusdb.github.io/tytusjs/dist/tytus.js"></script>
         <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/standalone/umd/vis-network.min.js"></script>
         <script type="module"> import * as GaugeChart from "https://unpkg.com/gauge-chart@next/dist/bundle.mjs";window.GaugeChart = GaugeChart;</script>
         <style>
-            table {
-                max-height: 300px;
-                overflow-y: scroll; 
-                overflow-x: scroll;
-            }
-            form {
-                display: flex;
-                gap: 1em; 
-                padding: 10px;
-                align-items: flex-start;
-            }
-    
-            #selectors form select,
-            #selectors form button{
-                min-width: 150px; 
-            }
-    
-            .result {
-                display: none;
-            }
-    
-            .result.active {
-                display: block;
-            }
-            </style>
+        table {
+            max-height: 300px;
+            overflow-y: scroll; 
+            overflow-x: scroll;
+        }
+        form {
+            display: flex;
+            gap: 1em; 
+            padding: 10px;
+            align-items: flex-start;
+        }
+
+        #selectors form select,
+        #selectors form button{
+            min-width: 150px; 
+        }
+
+        .result {
+            display: none;
+        }
+
+        .result.active {
+            display: block;
+        }
+        </style>
     </head>
 
     <body>
-        <h1>IA1 Proyecto 2 - 201430496</h1>
+        <h1>IA Proyecto 2 - 201430496</h1>
         <form class="form-group">
             <div>
                 <label for="csv">Seleccionar Archivo:</label>
@@ -48,10 +48,6 @@
                     <option id="linear-regression" value="lr">Regresión Lineal</option>
                     <option id="poly-regression" value="pr">Regresión Polinomial</option>
                     <option id="decision-tree" value="dt">Árbol de decision</option>
-                    <option id="naive-bayes" value="nb">Naïve Bayes</option>
-                    <option id="neural-network" value="nn">Redes Neuronales</option>
-                    <option id="k-means" value="km">K-means</option>
-                    <option id="k-nearest" value="kn">K-nearest Neighbor</option>
                 </select>
             </div>
         </form>
