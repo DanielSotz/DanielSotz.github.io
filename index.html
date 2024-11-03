@@ -293,8 +293,8 @@
                                     x: d,
                                     y: vals.yTrain[i]
                                 })),
-                                borderColor: 'rgba(75, 192, 192, 1)',
-                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderColor: 'rgba(155, 192, 192, 1)',
+                                backgroundColor: 'rgba(155, 192, 192, 0.2)',
                                 tension: 0.4, // Suavizado de la línea
                                 fill: false
                             },
@@ -403,8 +403,8 @@
                             font: {
                                 color: '#ffffff', // Color del texto
                                 strokeWidth: 3, // Grosor del borde alrededor del texto
-                                strokeColor: '#000000', // Color de fondo del borde del texto
-                                background: '#000000', // Color de fondo del texto
+                                strokeColor: '#000001', // Color de fondo del borde del texto
+                                background: '#000001', // Color de fondo del texto
                                 align: 'horizontal' // Alineación del texto en la arista
                             }
                         }
@@ -502,16 +502,7 @@
             console.log(values)
             return values;
         }
-
-        function getSelectedBayesTree() {
-            const selects = document.querySelectorAll(".option");
-            const values = {};
-            selects.forEach(select => {
-                values[select.name] = select.value;
-            });
-            return values;
-        }
-
+        
         function createTableFromObject(obj){
             const table = document.createElement("table");
             const headers = Object.keys(obj);
@@ -698,54 +689,7 @@
             return selects;
         }
 
-        function bayesTreeSelector(model,cols,arrays){
-            let selects = [];
-            const data = cols;
-
-            const wLabel = document.createElement("label")
-            wLabel.setAttribute("for", "wSelect");
-            wLabel.textContent = "Predecir para";
-            const wSelect = document.createElement("select")
-            wSelect.setAttribute("name", "predictFor");
-            wSelect.setAttribute("id", "predictFor");
-            //wSelect.setAttribute("class", "option");
-            data.forEach(name => {
-                let option = document.createElement("option");
-                option.value = name;
-                option.text = name;
-                wSelect.appendChild(option);
-            });
-            const wContainer = document.createElement("div");
-            wContainer.appendChild(wLabel);
-            wContainer.appendChild(wSelect);
-            selects.push(wContainer);
-
-            data.forEach(name => {
-                const filteredArray = [... new Set(arrays[name])];
-
-                const label = document.createElement("label");
-                label.setAttribute("for", name);
-                label.textContent = name;
-                const select = document.createElement("select");
-                select.setAttribute("name", name);
-                select.setAttribute("id", name);
-                select.setAttribute("class", "option");
-
-                filteredArray.forEach(col => {
-                    let option = document.createElement("option");
-                    option.value = col;
-                    option.text = col;
-                    select.appendChild(option);
-                });
-
-                const container = document.createElement("div");
-                container.appendChild(label);
-                container.appendChild(select);
-                selects.push(container);
-            });
-            return selects;
-        }
-
+        
         function showTab(tabId) {
             const allDivs = document.querySelectorAll(".result");
             allDivs.forEach(div => {
