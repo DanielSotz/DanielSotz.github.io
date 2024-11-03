@@ -111,25 +111,25 @@
     
             .result {
             display: none;
-            }
+        }
     
             .result.active {
                 display: block;
             }
 
             #graphs {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 20px;
-            }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
 
-            /* Ajustar el tamaño del canvas para que ocupe el contenedor */
-            .graphs {
-                width: 100%;       /* Ocupa todo el ancho del contenedor */
-                height: 400px;     /* Ajusta la altura según prefieras */
-                max-width: 800px;  /* Ancho máximo para que no se desborde en pantallas pequeñas */
-            }            
+    /* Ajustar el tamaño del canvas para que ocupe el contenedor */
+    .graphs {
+        width: 100%;       /* Ocupa todo el ancho del contenedor */
+        height: 400px;     /* Ajusta la altura según prefieras */
+        max-width: 800px;  /* Ancho máximo para que no se desborde en pantallas pequeñas */
+    }            
            
         </style>
     </head>
@@ -293,8 +293,8 @@
                                     x: d,
                                     y: vals.yTrain[i]
                                 })),
-                                borderColor: 'rgba(155, 192, 192, 1)',
-                                backgroundColor: 'rgba(155, 192, 192, 0.2)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
                                 tension: 0.4, // Suavizado de la línea
                                 fill: false
                             },
