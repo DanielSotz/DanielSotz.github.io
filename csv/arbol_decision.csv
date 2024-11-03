@@ -1,0 +1,11 @@
+actividad,clima,tiempo_disponible,compania,estado_animo
+leer,soleado,poco,solo,feliz
+caminar,soleado,poco,amigos,feliz
+cocinar,nublado,mucho,familia,tranquilo
+ver_peliculas,lluvioso,poco,solo,triste
+jugar_juegos_de_mesa,lluvioso,mucho,familia,feliz
+escuchar_musica,lluvioso,poco,amigos,tranquilo
+escribir,soleado,mucho,solo,triste
+dibujar,nublado,poco,solo,feliz
+hacer_deporte,soleado,mucho,amigos,tranquilo
+jugar_cartas,lluvioso,mucho,amigos,feliz
